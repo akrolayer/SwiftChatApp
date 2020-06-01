@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="1760.8" y="-296.40179910044981"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="R17-5p-fgL">
             <objects>
-                <viewController id="ZWI-bF-wde" sceneMemberID="viewController">
+                <viewController id="ZWI-bF-wde" customClass="RegisterViewController" customModule="chatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="brB-Nx-fGe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                                 <rect key="frame" x="-93" y="-143" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register" translatesAutoresizingMaskIntoConstraints="NO" id="R03-4S-dQA">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register" translatesAutoresizingMaskIntoConstraints="NO" id="R03-4S-dQA" customClass="Register">
                                         <rect key="frame" x="94" y="185" width="373" height="629"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -171,6 +171,9 @@
                                         <state key="normal" title="新規登録">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerNewUser:" destination="ZWI-bF-wde" eventType="touchUpInside" id="PqF-Jm-l01"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -181,6 +184,10 @@
                         <viewLayoutGuide key="safeArea" id="mqB-xd-1lL"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xdp-fv-EAn"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="ldN-9S-Skq" id="nHq-Wu-wJG"/>
+                        <outlet property="passwordTextField" destination="dl9-zE-qgx" id="Bfa-Hn-rFE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUR-Vd-LQT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
