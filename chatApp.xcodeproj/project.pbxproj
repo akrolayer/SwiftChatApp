@@ -15,6 +15,7 @@
 		E1A15070247D5DA2004E3E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A1506F247D5DA2004E3E46 /* Assets.xcassets */; };
 		E1A15073247D5DA2004E3E46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A15071247D5DA2004E3E46 /* LaunchScreen.storyboard */; };
 		E1A1508024854C32004E3E46 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A1507F24854C32004E3E46 /* RegisterViewController.swift */; };
+		E1A15082248E88FC004E3E46 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A15081248E88FC004E3E46 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E1A15072247D5DA2004E3E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A15074247D5DA2004E3E46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1A1507F24854C32004E3E46 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../RegisterViewController.swift; sourceTree = "<group>"; };
+		E1A15081248E88FC004E3E46 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		F48ED2DF52DDF3253E1C3B9A /* Pods-chatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatApp.debug.xcconfig"; path = "Target Support Files/Pods-chatApp/Pods-chatApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 				E1A15066247D5D9E004E3E46 /* AppDelegate.swift */,
 				E1A15068247D5D9E004E3E46 /* SceneDelegate.swift */,
 				E1A1506A247D5D9E004E3E46 /* ViewController.swift */,
+				E1A15081248E88FC004E3E46 /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				E1A1506B247D5D9E004E3E46 /* ViewController.swift in Sources */,
 				E1A15067247D5D9E004E3E46 /* AppDelegate.swift in Sources */,
 				E1A15069247D5D9E004E3E46 /* SceneDelegate.swift in Sources */,
+				E1A15082248E88FC004E3E46 /* ChatViewController.swift in Sources */,
 				E1A1508024854C32004E3E46 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

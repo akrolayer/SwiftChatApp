@@ -124,10 +124,29 @@
                         <viewLayoutGuide key="safeArea" id="FfR-bK-sh3"/>
                     </view>
                     <navigationItem key="navigationItem" id="23F-IN-rR6"/>
+                    <connections>
+                        <segue destination="2Sp-nI-ekv" kind="show" identifier="" id="efT-ei-lgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cln-QM-nQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.8" y="-296.40179910044981"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="ZUz-OB-zJc">
+            <objects>
+                <viewController id="2Sp-nI-ekv" customClass="ChatViewController" customModule="chatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ojX-lU-0UV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YVQ-Ns-6s6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AOh-Up-JGn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qL-gh-uhn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2694" y="147"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="R17-5p-fgL">
@@ -187,13 +206,17 @@
                     <connections>
                         <outlet property="emailTextField" destination="ldN-9S-Skq" id="nHq-Wu-wJG"/>
                         <outlet property="passwordTextField" destination="dl9-zE-qgx" id="Bfa-Hn-rFE"/>
+                        <segue destination="2Sp-nI-ekv" kind="show" identifier="chat" id="0p1-kl-waK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUR-Vd-LQT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760.8" y="413.3433283358321"/>
+            <point key="canvasLocation" x="1761" y="531"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0p1-kl-waK"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="chatLoginBG" width="1280" height="1920"/>
         <image name="loginBG" width="1475" height="1920"/>

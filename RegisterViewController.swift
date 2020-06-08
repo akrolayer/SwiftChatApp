@@ -25,13 +25,16 @@ class RegisterViewController: UIViewController {
     //Firebaseにユーザを作成する
     @IBAction func registerNewUser(_ sender: Any) {
         //アニメーションのスタート
-        
+        startAnimation()
         //新規登録
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil{
                 print(error as Any)
             }else{
                 print("ユーザの作成に成功しました！")
+                self.stopAnimation()
+                
+                performSegue(withIdentifier: "chat", sender: nil)
             }
         }
     }
@@ -42,6 +45,12 @@ class RegisterViewController: UIViewController {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.play()
+        
+        view.addSubview(animationView)
+    }
+    
+    func stopAnimation(){
+        animationView.removeFromSuperview()
     }
     /*
     // MARK: - Navigation
