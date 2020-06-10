@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     let animationView = AnimationView()
+    let animationLib = AnimationLib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,8 @@ class RegisterViewController: UIViewController {
                 print("ユーザの作成に成功しました！")
                 self.stopAnimation()
                 
-                performSegue(withIdentifier: "chat", sender: nil)
+                
+                self.performSegue(withIdentifier: "chat", sender: nil)
             }
         }
     }

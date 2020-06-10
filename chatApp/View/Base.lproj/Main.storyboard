@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="JYb-mg-uQD">
             <objects>
-                <viewController id="8e7-ur-hqP" sceneMemberID="viewController">
+                <viewController id="8e7-ur-hqP" customClass="LoginViewController" customModule="chatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nzq-YE-8Hc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,6 +108,9 @@
                                         <state key="normal" title="ログイン">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="login:" destination="8e7-ur-hqP" eventType="touchUpInside" id="z36-7T-ACi"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jw0-ZX-ai4">
                                         <rect key="frame" x="129" y="337" width="290" height="34"/>
@@ -125,7 +128,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="23F-IN-rR6"/>
                     <connections>
-                        <segue destination="2Sp-nI-ekv" kind="show" identifier="" id="efT-ei-lgb"/>
+                        <outlet property="emailTextField" destination="d2O-LX-m0F" id="K8c-dl-oEF"/>
+                        <outlet property="passwordTextField" destination="Jw0-ZX-ai4" id="eMy-l4-bG9"/>
+                        <segue destination="2Sp-nI-ekv" kind="show" identifier="chat" id="efT-ei-lgb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cln-QM-nQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
