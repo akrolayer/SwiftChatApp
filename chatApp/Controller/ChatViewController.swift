@@ -8,15 +8,30 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
 
+    @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet var messageTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName:"CustomTableViewCell",bundle:nil), forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = UITableView.automaticDimension
+        //可変
+        tableView.estimatedRowHeight = 65
     }
     
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
     /*
     // MARK: - Navigation
 

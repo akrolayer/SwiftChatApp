@@ -18,6 +18,8 @@
 		E1A15082248E88FC004E3E46 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A15081248E88FC004E3E46 /* ChatViewController.swift */; };
 		E1A15084249128C3004E3E46 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A15083249128C3004E3E46 /* LoginViewController.swift */; };
 		E1A1508824912D24004E3E46 /* AnimationLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A1508724912D24004E3E46 /* AnimationLib.swift */; };
+		E1A1508B24927A92004E3E46 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A1508924927A92004E3E46 /* CustomTableViewCell.swift */; };
+		E1A1508C24927A92004E3E46 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A1508A24927A92004E3E46 /* CustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		E1A15081248E88FC004E3E46 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E1A15083249128C3004E3E46 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E1A1508724912D24004E3E46 /* AnimationLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLib.swift; sourceTree = "<group>"; };
+		E1A1508924927A92004E3E46 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E1A1508A24927A92004E3E46 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		F48ED2DF52DDF3253E1C3B9A /* Pods-chatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatApp.debug.xcconfig"; path = "Target Support Files/Pods-chatApp/Pods-chatApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +114,8 @@
 			children = (
 				E1A1506C247D5D9E004E3E46 /* Main.storyboard */,
 				E1A1506F247D5DA2004E3E46 /* Assets.xcassets */,
+				E1A1508924927A92004E3E46 /* CustomTableViewCell.swift */,
+				E1A1508A24927A92004E3E46 /* CustomTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 			files = (
 				E1A15073247D5DA2004E3E46 /* LaunchScreen.storyboard in Resources */,
 				E1A15070247D5DA2004E3E46 /* Assets.xcassets in Resources */,
+				E1A1508C24927A92004E3E46 /* CustomTableViewCell.xib in Resources */,
 				E1A1506E247D5D9E004E3E46 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +251,7 @@
 			files = (
 				E1A15084249128C3004E3E46 /* LoginViewController.swift in Sources */,
 				E1A1506B247D5D9E004E3E46 /* ViewController.swift in Sources */,
+				E1A1508B24927A92004E3E46 /* CustomTableViewCell.swift in Sources */,
 				E1A15067247D5D9E004E3E46 /* AppDelegate.swift in Sources */,
 				E1A15069247D5D9E004E3E46 /* SceneDelegate.swift in Sources */,
 				E1A1508824912D24004E3E46 /* AnimationLib.swift in Sources */,
