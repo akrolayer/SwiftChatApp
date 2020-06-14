@@ -14,6 +14,10 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet var messageTextField: UITextField!
+    
+    //スクリーンのサイズ
+    let screenSize = UIScreen.main.bounds.size
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +27,16 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.rowHeight = UITableView.automaticDimension
         //可変
         tableView.estimatedRowHeight = 65
+        
+        //キーボード
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.keyboardWillShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.keyboardWillHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        //Firebaseからデータをfetchしてくる
+    }
+    @objc func keyboardWillShow(_ notification:NSNotification){
+        let keyboardHeight = ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as Any) as AnyObject).cgRectValue.height
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
