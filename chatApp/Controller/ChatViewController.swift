@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
 
     @IBOutlet var tableView: UITableView!
@@ -18,11 +18,14 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     //スクリーンのサイズ
     let screenSize = UIScreen.main.bounds.size
     
+    var chatArray = [Message]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        messageTextField.delegate = self
         tableView.register(UINib(nibName:"CustomTableViewCell",bundle:nil), forCellReuseIdentifier: "Cell")
         tableView.rowHeight = UITableView.automaticDimension
         //可変
@@ -52,10 +55,24 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         messageTextField.frame.origin.y = screenSize.height - messageTextField.frame.height
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        messageTextField.resignFirstResponder()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //メッセージの数
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         <#code#>
     }
