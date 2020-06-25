@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import ChameleonFramework
+import Firebase
 
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
-
+    @IBOutlet var sendButton: UIButton!
+    
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet var messageTextField: UITextField!
@@ -68,13 +71,66 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //メッセージの数
+        return chatArray.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
+        
+        cell.messageLabel.text = chatArray[indexPath.row].message
+        cell.userNameLabel.text = chatArray[indexPath.row].sender
+        cell.iconImageView.image = UIImage(named: "dogAvatarImage")
+        
+        if cell.userNameLabel.text == Auth.auth().currentUser?.email as! String{
+            cell.messageLabel.backgroundColor = UIColor.flatGreen()
+        }else{
+            cell.messageLabel.backgroundColor = UIColor.flatBlue()
+        }
+        return cell
+    }
+    
+    
+    @IBAction func sendAction(_ sender: Any) {
+        messageTextField.endEditing(true)
+        messageTextField.isEnabled = false
+        sendButton.isEnabled = false
+        
+        let chatDB = Database.database().reference().child("chats")
+        //キーバリュー型で内容を送信（Dictionary型）
+        let messageInfo = ["sender":Auth.auth().currentUser?.email,
+            "message":messageTextField.text]
+        //chatDBに入れる
+        chatDB.childByAutoId().setValue(messageInfo){(error,result)
+                in
+            if error != nil{
+                print(error)
+            }else{
+                print("送信完了")
+                self.messageTextField.isEnabled = true
+                self.sendButton.isEnabled = true;
+                self.messageTextField.text = ""
+            }
+        }
+    }
+    func fetchChatData(){
+        //どこからデータを引っ張ってくるのか
+        let fetchDataRef = Database.database().reference().child("chats")
+        //新しく更新があったときだけ取得したい
+        fetchDataRef.observe(.childAdded) { (snapShot) in
+            let snapShotData = snapShot.value as AnyObject
+            let text = snapShotData.value(forKey: "message")
+            
+            let sender = snapShotData.value(forKey: "sender")
+            
+            let message = Message()
+            message.message = text as! String
+            message.sender = sender as! String
+            self.chatArray.append(message)
+            self.tableView.reloadData()
+        }
     }
     /*
     // MARK: - Navigation
@@ -85,5 +141,5 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
