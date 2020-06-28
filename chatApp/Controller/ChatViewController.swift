@@ -40,6 +40,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.keyboardWillHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         //Firebaseからデータをfetchしてくる
+        fetchChatData()
+        
+        tableView.separatorStyle = .none
     }
     @objc func keyboardWillShow(_ notification:NSNotification){
         let keyboardHeight = ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as Any) as AnyObject).cgRectValue.height
