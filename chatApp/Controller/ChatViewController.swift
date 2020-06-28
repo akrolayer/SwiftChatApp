@@ -84,22 +84,33 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
         cell.messageLabel.text = chatArray[indexPath.row].message
+        
         cell.userNameLabel.text = chatArray[indexPath.row].sender
         cell.iconImageView.image = UIImage(named: "dogAvatarImage")
         
         if cell.userNameLabel.text == Auth.auth().currentUser?.email as! String{
             cell.messageLabel.backgroundColor = UIColor.flatGreen()
+            cell.messageLabel.layer.cornerRadius = 20
+                   cell.messageLabel.layer.masksToBounds = true
         }else{
             cell.messageLabel.backgroundColor = UIColor.flatBlue()
         }
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //return view.frame.size.height/10
+        return 100
+    }
     
     @IBAction func sendAction(_ sender: Any) {
         messageTextField.endEditing(true)
         messageTextField.isEnabled = false
         sendButton.isEnabled = false
+        
+        if messageTextField.text!.count > 15{
+            print("over 15")
+            return
+        }
         
         let chatDB = Database.database().reference().child("chats")
         //キーバリュー型で内容を送信（Dictionary型）
